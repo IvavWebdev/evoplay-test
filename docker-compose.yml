@@ -1,0 +1,30 @@
+version: '2'
+services:
+    web:
+        build:
+            context: ./
+            dockerfile: web.docker
+        volumes:
+            - ../:/var/www
+        ports:
+            - "8905:80"
+        links:
+            - app
+    app:
+        build:
+            context: ./
+            dockerfile: app.docker
+        volumes:
+            - ../:/var/www
+        links:
+            - database
+    database:
+        image: mysql:8
+        environment:
+            - "MYSQL_ROOT_USER=evoplay"
+            - "MYSQL_ROOT_PASSWORD=evoplay"
+            - "MYSQL_DATABASE=evoplay"
+        ports:
+            - "33905:3306"
+        volumes:
+            - ./data:/var/lib/mysql

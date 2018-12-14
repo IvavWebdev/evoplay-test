@@ -1,0 +1,11 @@
+{
+    "name": "mil/evoplay-test",
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "classmap": [
+            "app"
+        ]
+    }
+}
