@@ -21,7 +21,6 @@ services:
     database:
         image: mysql:8
         environment:
-            - "MYSQL_ROOT_USER=evoplay"
             - "MYSQL_ROOT_PASSWORD=evoplay"
             - "MYSQL_DATABASE=evoplay"
         ports:

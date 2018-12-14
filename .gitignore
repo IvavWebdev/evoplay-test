@@ -1,0 +1,4 @@
+# exclude everything directory
+/data
+/vendor
+/.idea

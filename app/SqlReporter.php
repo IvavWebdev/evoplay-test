@@ -2,6 +2,7 @@
 
 namespace app;
 
+use config\MySQLConfiguration;
 use mysqli;
 
 class SqlReporter implements Reporter
@@ -10,16 +11,21 @@ class SqlReporter implements Reporter
     private $max_sum;
     private $data = [];
 
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "evoplay";
-    private $dbname = "evoplay";
-    private $port = "33905";
+    private $servername;
+    private $username;
+    private $password;
+    private $dbname;
+    private $port;
 
     public function __construct($file_name, $max_sum)
     {
         $this->file_name = str_replace(['-', '.csv'], ['_', ''], $file_name);
         $this->max_sum = $max_sum;
+        $this->servername = MySQLConfiguration::DB_SERVERNAME;
+        $this->dbname = MySQLConfiguration::DB_DATABASE_NAME;
+        $this->port = MySQLConfiguration::DB_DATABASE_PORT;
+        $this->username = MySQLConfiguration::DB_USERNAME;
+        $this->password = MySQLConfiguration::DB_PASSWORD;
     }
 
     /**
