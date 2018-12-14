@@ -17,8 +17,8 @@
 3. Устанавливаем зависимости Composer
     - `composer install`
 4. Загружаем данные в БД
-- для таблицы dataset_big данные из файла evoplay_dataset_big.sql
-- для таблицы dataset_small данные из файла evoplay_dataset_small.sql
+- для таблицы dataset_big данные из файла dataset-big.csv
+- для таблицы dataset_small данные из файла dataset-small.csv
 
 **Использование**
 - `php index.php dataset-big.csv 2000` 
