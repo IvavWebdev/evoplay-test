@@ -29,7 +29,7 @@ class SqlReporter implements Reporter
     }
 
     /**
-     * This function get data from MySQL Table,  g
+     * This function get data from MySQL Table,
      * and write transactions to $data, group by user
      */
     public function getDataByUser()
